@@ -28,6 +28,10 @@ public class PmsBrandController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PmsBrandController.class);
 
+    /**
+     * 获取所有品牌列表
+     * @return CommonResult<List<PmsBrand>>
+     */
     @RequestMapping(value = "/listAll", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> getBrandList() {

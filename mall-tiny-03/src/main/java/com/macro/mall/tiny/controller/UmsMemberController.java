@@ -26,6 +26,11 @@ public class UmsMemberController {
     @Autowired
     private UmsMemberService memberService;
 
+    /**
+     * 获取验证码
+     * @param telephone
+     * @return CommonResult
+     */
     @ApiOperation("获取验证码")
     @RequestMapping(value = "/getAuthCode", method = RequestMethod.GET)
     @ResponseBody
@@ -33,11 +38,16 @@ public class UmsMemberController {
         return memberService.generateAuthCode(telephone);
     }
 
+    /**
+     * 判断验证码是否正确
+     * @param telephone
+     * @param authCode
+     * @return CommonResult
+     */
     @ApiOperation("判断验证码是否正确")
     @RequestMapping(value = "/verifyAuthCode", method = RequestMethod.POST)
     @ResponseBody
-    public CommonResult updatePassword(@RequestParam String telephone,
-                                 @RequestParam String authCode) {
+    public CommonResult updatePassword(@RequestParam String telephone, @RequestParam String authCode) {
         return memberService.verifyAuthCode(telephone,authCode);
     }
 }

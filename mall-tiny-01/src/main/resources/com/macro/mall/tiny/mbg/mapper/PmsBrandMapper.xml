@@ -97,6 +97,7 @@
       order by ${orderByClause}
     </if>
   </select>
+
   <select id="selectByExample" parameterType="com.macro.mall.tiny.mbg.model.PmsBrandExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -111,6 +112,7 @@
       order by ${orderByClause}
     </if>
   </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
